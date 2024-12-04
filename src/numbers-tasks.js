@@ -273,8 +273,9 @@ function toNumber(value, def) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(num) {
+  const rez = num ** 3;
+  return rez;
 }
 
 /**
@@ -290,8 +291,20 @@ function getCube(/* num */) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  const fibArray = [0, 1, 1, 2, 3, 5];
+  let rez;
+  if (index <= 5) {
+    rez = fibArray[index];
+  } else {
+    while (fibArray.length !== index + 1) {
+      fibArray.push(
+        fibArray[fibArray.length - 1] + fibArray[fibArray.length - 2]
+      );
+    }
+    rez = fibArray[index];
+  }
+  return rez;
 }
 
 /**
@@ -305,8 +318,15 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  let sum = 0;
+  let i = 1;
+  while (i < n) {
+    sum += i;
+    i += 1;
+  }
+  sum += n;
+  return sum;
 }
 
 /**
